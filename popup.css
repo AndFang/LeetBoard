@@ -1,0 +1,96 @@
+:root {
+    --bg-color: #FFFFFF;
+    --text-color: #333333;
+    --main-bg-color: #E2E8F0;
+    --grey-bg-color: #A0AEC0;
+    --padding: 10px;
+    --margin: 5px;
+    --radius: 15px;
+    --fontSize: 24px;
+}
+
+.add {
+    background-color: #FFA116;
+}
+
+.banner {
+    background-color: #FFA116;
+    border-radius: var(--radius) var(--radius) 0 0;
+    flex: 0 1 auto;
+    font-size: var(--fontSize);
+    margin-bottom: var(--margin);
+    padding: var(--padding);
+    text-align: center;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    font-family: "Roboto", mono;
+}
+
+body.dark-mode {
+    --bg-color: #333333;
+    --text-color: #FFFFFF;
+    --main-bg-color: #4A5568;
+    --grey-bg-color: #718096;
+}
+
+.changeDisplay {
+    display: flex;
+    background-color: var(--grey-bg-color);
+    flex: 0 1 auto;
+    justify-content: space-between;
+}
+
+.container {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.controls {
+    flex: 0 1 auto;
+}
+
+.display {
+    border-color: #718096;
+    border-style: solid;
+    flex: 1 1 auto;
+
+    margin-bottom: var(--margin);
+    padding: var(--padding);
+}
+
+.divStyle {
+    border-radius: var(--radius);
+    margin-bottom: var(--margin);
+    padding: var(--padding);
+}
+
+.friends {
+    flex: 1 1 auto;
+
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.main {
+    background-color: var(--main-bg-color);
+    border-radius: 0 0 var(--radius) var(--radius);
+    flex: 1 1 auto;
+    padding: var(--padding);
+
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.shortcuts {
+    display: flex;
+    background-color: var(--grey-bg-color);
+    flex: 0 1 auto;
+    justify-content: space-between;
+}
