@@ -8,30 +8,63 @@
 </head>
 <body>
     <div class="container">
+        <div class="toast" id="toast">
+            <div class="toast-body">
+            </div>
+        </div>
         <div class="banner">
             LeetCode Leaderboards
         </div>
-        <div class="main">
-            <div class="shortcuts divStyle">
-                <button id="leetcode-problems">LeetCode</button>
-                <button id="leetcode-profile">Profile</button>
-                <button id="toggle-mode-button">Dark Mode</button>
+        <div class="main" id="loginFalse">
+            <div class="loginError">
+                Login to LeetCode to use this extension!
+            </div>
+            <div class="logo">
+                <img src="lc.png" style="height: 100%; width: 100%; object-fit: contain;"/>
+            </div>
+            <div class="fractionDiv" style="flex: 1 1 auto;">
+                <div class="fraction">
+                    <button id="leetcode-login" class="left">Log In</button>
+                </div>
+                <div class="fraction">
+                    <button id="toggle-mode-button1">Dark Mode</button>
+                </div>
+                <div class="fraction">
+                    <button id="" class="right">About</button>
+                </div>
+            </div>
+        </div>
+        <div class="main" id="loginTrue">
+            <div class="fractionDiv">
+                <div class="fraction">
+                    <button id="leetcode-problems" class="left">Leetcode</button>
+                </div>
+                <div class="fraction">
+                    <button id="leetcode-profile">Profile</button>
+                </div>
+                <div class="fraction">
+                    <button id="toggle-mode-button2" class="right">Dark Mode</button>
+                </div>
             </div>
             <div class="friends">
-                <div class="display">
+                <div class="display" id="test">
                     FRIENDS
                 </div>
                 <div class="controls">
-                    <div class="changeDisplay divStyle">
-                        <button>VIEW FOLLOWING</button>
-                        <button>VIEW FRIENDS</button>
+                    <div class="fractionDiv">
+                        <div class="fraction">
+                            <button class="left">Following</button>
+                        </div>
+                        <div class="fraction">
+                            <button>Friends</button>
+                        </div>
+                        <div class="fraction">
+                            <button class="right">Requests</button>
+                        </div>
                     </div>
-                    <div class="add divStyle">
-                        <form>
-                            <input type="text" placeholder="Enter LC Account"/>
-                            <input type="button" value="Follow Account" />
-                        </form>
-                        <p>MESSAGE</p>
+                    <div class="add">
+                        <input type="text" id="account" placeholder="Enter LC Account"/>
+                        <button id="add-follow">Follow Account</button>
                     </div>
                 </div>
             </div>

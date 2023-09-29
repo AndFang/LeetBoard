@@ -1,16 +1,20 @@
 :root {
     --bg-color: #FFFFFF;
-    --text-color: #333333;
-    --main-bg-color: #E2E8F0;
-    --grey-bg-color: #A0AEC0;
-    --padding: 10px;
-    --margin: 5px;
-    --radius: 15px;
     --fontSize: 24px;
+    --grey-bg-color: #A0AEC0;
+    --grey-bg-color-select: #718096;
+    --main-bg-color: #E2E8F0;
+    --margin: 5px;
+    --padding: 10px;
+    --radius: 15px;
+    --text-color: #333333;
 }
 
 .add {
     background-color: #FFA116;
+    border-radius: var(--radius);
+    margin-bottom: var(--margin);
+    padding: var(--padding);
 }
 
 .banner {
@@ -26,22 +30,16 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
     font-family: "Roboto", mono;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 body.dark-mode {
     --bg-color: #333333;
-    --text-color: #FFFFFF;
-    --main-bg-color: #4A5568;
     --grey-bg-color: #718096;
-}
-
-.changeDisplay {
-    display: flex;
-    background-color: var(--grey-bg-color);
-    flex: 0 1 auto;
-    justify-content: space-between;
+    --grey-bg-color-select: #A0AEC0;
+    --main-bg-color: #4A5568;
+    --text-color: #FFFFFF;
 }
 
 .container {
@@ -58,39 +56,93 @@ body.dark-mode {
     border-color: #718096;
     border-style: solid;
     flex: 1 1 auto;
-
     margin-bottom: var(--margin);
     padding: var(--padding);
 }
 
-.divStyle {
-    border-radius: var(--radius);
-    margin-bottom: var(--margin);
+.fraction {
+    flex: 1 1 auto;
+}
+
+.fraction button {
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 16px;
+    height: 100%;
     padding: var(--padding);
+    width: 100%;
+}
+
+.fraction button:hover {
+    background-color: var(--grey-bg-color-select);
+}
+
+.fractionDiv {
+    background-color: var(--grey-bg-color);
+    border-radius: var(--radius);
+    display: flex;
+    flex: 0 1 auto;
+    margin-bottom: var(--margin);
 }
 
 .friends {
-    flex: 1 1 auto;
-
     display: flex;
+    flex: 1 1 auto;
     flex-flow: column;
     height: 100%;
+}
+
+.left {
+    border-bottom-left-radius: var(--radius);
+    border-top-left-radius: var(--radius);
+}
+
+.loginError {
+    background-color: lightcoral;
+    border-radius: var(--radius);
+    flex: 1 1 auto;
+    font-size: 16px;
+    margin-bottom: var(--margin);
+    padding: var(--padding);
+    text-align: center;
+}
+
+.logo {
+    flex: 3 1 auto;
+    margin-bottom: var(--margin);
 }
 
 .main {
     background-color: var(--main-bg-color);
     border-radius: 0 0 var(--radius) var(--radius);
-    flex: 1 1 auto;
-    padding: var(--padding);
-
     display: flex;
+    flex: 1 1 auto;
     flex-flow: column;
     height: 100%;
+    padding: var(--padding);
 }
 
-.shortcuts {
-    display: flex;
-    background-color: var(--grey-bg-color);
-    flex: 0 1 auto;
-    justify-content: space-between;
+.right {
+    border-bottom-right-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+
+.toast {
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition:
+        opacity 500ms,
+        transform 500ms;
+    width: 100%;
+    
+}
+
+.toast-body {
+    border-radius: var(--radius);
+    margin: var(--margin);
+    padding: var(--padding);
 }
