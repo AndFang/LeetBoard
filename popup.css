@@ -1,3 +1,41 @@
+.user {
+    flex: 0 1 auto;
+    background-color: var(--user-bg-color);
+    border-radius: var(--radius);
+    padding: var(--padding);
+    margin-bottom: var(--margin);
+
+    display: flex;
+}
+
+.user img {
+    flex: 1 1 auto;
+    max-height: 5vh;
+    max-width: 5vh;
+    background-color: transparent;
+}
+
+.user a {
+    flex: 100 100 auto;
+    padding-left: var(--padding);
+    font-size: 4vh;
+    text-decoration: none;
+    color: var(--text-color);
+    overflow: auto;
+}
+.user button {
+    flex: 1 1 auto;
+    background-color: transparent;
+    border-radius: var(--radius);
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.user button:hover {
+    background-color: lightcoral;
+}
+
 :root {
     --bg-color: #FFFFFF;
     --fontSize: 24px;
@@ -8,6 +46,27 @@
     --padding: 10px;
     --radius: 15px;
     --text-color: #333333;
+
+    --user-bg-color: #B7B7B7;
+}
+
+::-webkit-scrollbar {
+    width: 100%;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-color);
 }
 
 .add {
@@ -20,7 +79,7 @@
 .banner {
     background-color: #FFA116;
     border-radius: var(--radius) var(--radius) 0 0;
-    flex: 0 1 auto;
+    flex: 1 0 auto;
     font-size: var(--fontSize);
     margin-bottom: var(--margin);
     padding: var(--padding);
@@ -40,6 +99,8 @@ body.dark-mode {
     --grey-bg-color-select: #A0AEC0;
     --main-bg-color: #4A5568;
     --text-color: #FFFFFF;
+
+    --user-bg-color: #949494;
 }
 
 .container {
@@ -58,6 +119,11 @@ body.dark-mode {
     flex: 1 1 auto;
     margin-bottom: var(--margin);
     padding: var(--padding);
+
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    overflow: auto;
 }
 
 .fraction {
@@ -88,7 +154,7 @@ body.dark-mode {
 }
 
 .friends {
-    display: flex;
+    display: contents;
     flex: 1 1 auto;
     flex-flow: column;
     height: 100%;
@@ -102,7 +168,7 @@ body.dark-mode {
 .loginError {
     background-color: lightcoral;
     border-radius: var(--radius);
-    flex: 1 1 auto;
+    flex: 0.1 1 auto;
     font-size: 16px;
     margin-bottom: var(--margin);
     padding: var(--padding);
@@ -127,6 +193,10 @@ body.dark-mode {
 .right {
     border-bottom-right-radius: var(--radius);
     border-top-right-radius: var(--radius);
+}
+
+.selected {
+    font-weight: bold;
 }
 
 .toast {

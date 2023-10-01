@@ -53,6 +53,39 @@ chrome.tabs.onUpdated.addListener(async (tabId, tab) => {
     }
 });
 
-cur = [1,2,3];
-chrome.storage.sync.set({ ['two-sum']: JSON.stringify(cur) });
-console.log("Done");
+function setUpPopup() {
+    let user = "";
+    let loggedIn = false;
+    chrome.cookies.getAll({"url": "https://www.leetcode.com/problemset/all/"})
+    .then(data => {
+        data.forEach(element => {
+            if (element["name"] == "LEETCODE_SESSION") {
+                loggedIn = true;
+
+                fetch("https://leetcode.com/")
+                .then(response => {
+                    return response.text();
+                })
+                .then(data => {
+                    ind = data.indexOf('username');
+                    user1 = data.indexOf('\'', ind);
+                    user2 = data.indexOf('\'', user1 + 1);
+                    user = data.substring(user1 + 1, user2);
+                });
+            }
+        });
+    });
+
+    setTimeout(function() {
+        chrome.storage.sync.set({ ['loggedIn']: loggedIn });
+        chrome.storage.sync.set({ ['user']: user });
+    }, 1000);
+}
+
+setUpPopup();
+
+chrome.runtime.onMessage.addListener(function(message, sender) {
+    if(message.popupIsOpen) {
+        setUpPopup();
+    }
+});
