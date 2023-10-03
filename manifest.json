@@ -10,14 +10,14 @@
         "128": "assets/icon-128.png"
     },
     "action": {
-        "default_popup": "popup.html"
+        "default_popup": "popup/popup.html"
     },
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "js/background.js"
     },
     "content_scripts": [
         {
-            "js": ["contentScript.js"],
+            "js": ["js/contentScript.js"],
             "matches": ["https://leetcode.com/problems/*"],
             "run_at": "document_end"
         }

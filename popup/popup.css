@@ -1,6 +1,14 @@
+.banner img {
+    height: 5vh;
+    width: 5vh;
+    margin-left: -5vh;
+    float: right;
+    content: var(--info-picture);
+}
+
 @font-face {
     font-family: 'LCFont';
-    src: url('./assets/LCFont.otf') format('opentype');
+    src: url('../assets/LCFont.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
  }
@@ -16,6 +24,8 @@
     --radius: 15px;
     --text-color: #333333;
     --user-bg-color: #B7B7B7;
+
+    --info-picture: url('../assets/infoB.png');
 }
 
 ::-webkit-scrollbar {
@@ -40,8 +50,27 @@
 .add {
     background-color: #FFA116;
     border-radius: var(--radius);
+    display: flex;
     margin-bottom: var(--margin);
     padding: var(--padding);
+}
+
+.add button {
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    flex: 1 1 auto;
+    margin-left: var(--margin);
+    padding: var(--padding);
+}
+
+.add button:hover {
+    background-color: var(--user-bg-color);
+}
+
+.add input {
+    cursor: pointer;
+    flex: 10 10 auto;
 }
 
 .banner {
@@ -69,6 +98,8 @@ body.dark-mode {
     --main-bg-color: #4A5568;
     --text-color: #FFFFFF;
     --user-bg-color: #949494;
+
+    --info-picture: url('../assets/infoW.png');
 }
 
 .container {

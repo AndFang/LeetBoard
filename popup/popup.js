@@ -19,7 +19,7 @@ function _userProfile(name, url) {
 
     const trashcan = document.createElement('button');
     const trashcanImg = document.createElement('img');
-    trashcanImg.src = "assets/trashcan.png";
+    trashcanImg.src = "../assets/trashcan.png";
     trashcanImg.classList.add('trashcan');
     trashcan.appendChild(trashcanImg);
     trashcan.addEventListener('click', function() {
@@ -172,6 +172,7 @@ document.addEventListener('DOMContentLoaded', setUp);
 // BUTTON ACTIONS
 document.getElementById('add-follow').addEventListener('click', function() {
     toast(document.getElementById('account').value);
+    document.getElementById('account').value = "";
 });
 document.getElementById('leetcode-problems').addEventListener('click', function() {
     chrome.tabs.create({ url: "https://leetcode.com/problemset/all/" });
@@ -183,6 +184,9 @@ document.getElementById('leetcode-login').addEventListener('click', function() {
     chrome.tabs.create({ url: "https://leetcode.com/accounts/login/" });
 });
 document.getElementById('about').addEventListener('click', function() {
+    chrome.tabs.create({ url: "https://github.com/AndFang/LeetBoard" });
+});
+document.getElementById('info').addEventListener('click', function() {
     chrome.tabs.create({ url: "https://github.com/AndFang/LeetBoard" });
 });
 document.querySelector('#toggle-mode-button1').addEventListener('click', () => {
