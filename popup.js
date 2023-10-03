@@ -19,7 +19,7 @@ function _userProfile(name, url) {
 
     const trashcan = document.createElement('button');
     const trashcanImg = document.createElement('img');
-    trashcanImg.src = "trashcan.png";
+    trashcanImg.src = "assets/trashcan.png";
     trashcanImg.classList.add('trashcan');
     trashcan.appendChild(trashcanImg);
     trashcan.addEventListener('click', function() {
@@ -35,6 +35,7 @@ function _userProfile(name, url) {
     return user;
 }
 function toast(account) {
+    account = account.toLowerCase();
     const toast = document.getElementById('toast');
     const toastBody = toast.querySelector('.toast-body');
 
@@ -59,7 +60,12 @@ function toast(account) {
             toastBody.innerHTML = "Cannot find account \"" + account + "\"";
         }
         else {
-            if (FOLLOWS.filter((b) => b[0] == account).length > 0) {
+            if (account == USER.toLowerCase()) {
+                toastBody.style.backgroundColor = "lightcoral";
+                toastBody.innerHTML = "You cannot follow yourself!";
+                return;
+            }
+            else if (FOLLOWS.filter((b) => b[0] == account).length > 0) {
                 toastBody.style.backgroundColor = "lightcoral";
                 toastBody.innerHTML = "You are already following \"" + account + "\"!";
                 return;
@@ -145,7 +151,10 @@ function display(selected) {
             FOLLOWS.forEach(element => {
                 display.appendChild(_userProfile(element[0], element[1]));
             });
-        
+            
+            document.querySelector('.selected').classList.remove('selected');
+            document.querySelector('.btn').classList.add('selected');
+
             break;
         case 'friends':
             display.innerHTML = 'TODO: FRIENDS FEATURE COMING SOON';
@@ -172,6 +181,9 @@ document.getElementById('leetcode-profile').addEventListener('click', function()
 });
 document.getElementById('leetcode-login').addEventListener('click', function() {
     chrome.tabs.create({ url: "https://leetcode.com/accounts/login/" });
+});
+document.getElementById('about').addEventListener('click', function() {
+    chrome.tabs.create({ url: "https://github.com/AndFang/LeetBoard" });
 });
 document.querySelector('#toggle-mode-button1').addEventListener('click', () => {
     darkMode();

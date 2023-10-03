@@ -1,40 +1,9 @@
-.user {
-    flex: 0 1 auto;
-    background-color: var(--user-bg-color);
-    border-radius: var(--radius);
-    padding: var(--padding);
-    margin-bottom: var(--margin);
-
-    display: flex;
-}
-
-.user img {
-    flex: 1 1 auto;
-    max-height: 5vh;
-    max-width: 5vh;
-    background-color: transparent;
-}
-
-.user a {
-    flex: 100 100 auto;
-    padding-left: var(--padding);
-    font-size: 4vh;
-    text-decoration: none;
-    color: var(--text-color);
-    overflow: auto;
-}
-.user button {
-    flex: 1 1 auto;
-    background-color: transparent;
-    border-radius: var(--radius);
-    border: none;
-    color: var(--text-color);
-    cursor: pointer;
-}
-
-.user button:hover {
-    background-color: lightcoral;
-}
+@font-face {
+    font-family: 'LCFont';
+    src: url('./assets/LCFont.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+ }
 
 :root {
     --bg-color: #FFFFFF;
@@ -46,7 +15,6 @@
     --padding: 10px;
     --radius: 15px;
     --text-color: #333333;
-
     --user-bg-color: #B7B7B7;
 }
 
@@ -80,6 +48,7 @@
     background-color: #FFA116;
     border-radius: var(--radius) var(--radius) 0 0;
     flex: 1 0 auto;
+    font-family: "LCFont", mono;
     font-size: var(--fontSize);
     margin-bottom: var(--margin);
     padding: var(--padding);
@@ -99,7 +68,6 @@ body.dark-mode {
     --grey-bg-color-select: #A0AEC0;
     --main-bg-color: #4A5568;
     --text-color: #FFFFFF;
-
     --user-bg-color: #949494;
 }
 
@@ -116,14 +84,13 @@ body.dark-mode {
 .display {
     border-color: #718096;
     border-style: solid;
-    flex: 1 1 auto;
-    margin-bottom: var(--margin);
-    padding: var(--padding);
-
     display: flex;
+    flex: 1 1 auto;
     flex-flow: column;
     height: 100%;
+    margin-bottom: var(--margin);
     overflow: auto;
+    padding: var(--padding);
 }
 
 .fraction {
@@ -215,4 +182,43 @@ body.dark-mode {
     border-radius: var(--radius);
     margin: var(--margin);
     padding: var(--padding);
+}
+
+.user {
+    background-color: var(--user-bg-color);
+    border-radius: var(--radius);
+    display: flex;
+    flex: 0 1 auto; 
+    margin-bottom: var(--margin);
+    padding: var(--padding);
+}
+
+.user a {
+    color: var(--text-color);
+    flex: 100 100 auto;
+    font-size: 4vh;
+    overflow: auto;
+    padding-left: var(--padding);
+    text-decoration: none;
+}
+
+.user button {
+   
+    background-color: transparent;
+    border: none;
+    border-radius: var(--radius);
+    color: var(--text-color);
+    cursor: pointer;
+    flex: 1 1 auto;
+}
+
+.user button:hover {
+    background-color: lightcoral;
+}
+
+.user img {
+    background-color: transparent;
+    flex: 1 1 auto;
+    max-height: 5vh;
+    max-width: 5vh;
 }

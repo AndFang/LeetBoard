@@ -38,21 +38,6 @@ const changeBadge = async (tab) => {
     }
 };
 
-chrome.tabs.onActivated.addListener(async (activeInfo) => {
-    const tab = await chrome.tabs.get(activeInfo.tabId);
-    changeBadge(tab);
-});
-
-chrome.tabs.onUpdated.addListener(async (tabId, tab) => {
-    let queryOptions = { active: true, lastFocusedWindow: true };
-    let [t] = await chrome.tabs.query(queryOptions);
-
-    if (t.id === tabId)
-    {
-        changeBadge(tab);
-    }
-});
-
 function setUpPopup() {
     let user = "";
     let loggedIn = false;
@@ -82,10 +67,26 @@ function setUpPopup() {
     }, 1000);
 }
 
-setUpPopup();
+chrome.tabs.onActivated.addListener(async (activeInfo) => {
+    const tab = await chrome.tabs.get(activeInfo.tabId);
+    changeBadge(tab);
+});
+chrome.tabs.onUpdated.addListener(async (tabId, tab) => {
+    let queryOptions = { active: true, lastFocusedWindow: true };
+    let [t] = await chrome.tabs.query(queryOptions);
 
+    if (t.id === tabId)
+    {
+        changeBadge(tab);
+    }
+});
 chrome.runtime.onMessage.addListener(function(message, sender) {
     if(message.popupIsOpen) {
         setUpPopup();
     }
 });
+
+
+
+setUpPopup();
+
