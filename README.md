@@ -12,7 +12,7 @@
 - Badge that displays your activity LeetCode activity status
 
 # Installation
-Chrome extension coming soon!
+Install [here](https://chrome.google.com/webstore/detail/leetboard/lphllgcddghcgeiflgpppipckageedhe) on the chrome extension store!
   
 # Future Updates
 - Friend other users
