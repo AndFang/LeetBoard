@@ -23,6 +23,7 @@ Developer: View []() for instructions on how to install the extension locally.
 - Friend other users
   - Display status of friend
   - Code with friend on same problem
+  - View activity of friends  
 - User friend request
 - Window inside LeetCode problem that displays friend status for current problem
 - Leave message for current question
