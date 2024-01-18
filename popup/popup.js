@@ -187,7 +187,7 @@ document.getElementById('about').addEventListener('click', function() {
     chrome.tabs.create({ url: "https://github.com/AndFang/LeetBoard" });
 });
 document.getElementById('info').addEventListener('click', function() {
-    chrome.tabs.create({ url: "https://github.com/AndFang/LeetBoard" });
+    chrome.tabs.create({ url: "https://github.com/AndFang/LeetBoard/wiki" });
 });
 document.querySelector('#toggle-mode-button1').addEventListener('click', () => {
     darkMode();

@@ -12,13 +12,17 @@
 - Badge that displays your activity LeetCode activity status
 
 # Installation
+<<<<<<< Updated upstream
 Install [here](https://chrome.google.com/webstore/detail/leetboard/lphllgcddghcgeiflgpppipckageedhe) on the chrome extension store!
+=======
+Chrome extension coming soon!
+Developer: View []() for instructions on how to install the extension locally.
+>>>>>>> Stashed changes
   
 # Future Updates
 - Friend other users
   - Display status of friend
   - Code with friend on same problem
-  - View status of friends  
 - User friend request
 - Window inside LeetCode problem that displays friend status for current problem
 - Leave message for current question
